@@ -4,7 +4,8 @@ let rightView = document.getElementById('right');
 
 let body = document.querySelector('body');
 let arrow = document.getElementById('arrow-ting');
-let pointers = document.querySelector('nav').getElementsByTagName('img');
+let pointers = document.querySelector('nav').querySelector('.container').getElementsByTagName('img');
+let circles = document.querySelector('nav').querySelectorAll('svg');
 
 //initially tags all divs with classes
 function tagItems() {
@@ -230,3 +231,5 @@ for (let each of pointers) {
         navAnimation(each);
     }
 }
+
+for()
