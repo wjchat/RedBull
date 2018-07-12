@@ -1,0 +1,181 @@
+@import 'styles'
+
+.first
+    padding-top: 30%
+    img
+        height: 20px
+        width: auto
+        display: block
+        position: relative
+
+    h1
+        color: $letterOrange
+        font-family: $hUltraLight
+        font-size: 120px
+        margin-right: $landingMargin
+        margin-left: $landingMargin
+        letter-spacing: 15px
+#right
+    .first
+        h1
+            text-align: left
+            
+        img
+            margin-right: auto
+            margin-left: $landingMargin / 2
+            
+    .second
+        display: grid
+        grid-template-rows: 1fr 1fr 1fr
+        div
+            height: auto
+            position: relative
+            width: 95%
+            display: block
+            margin-right: auto
+            margin-left: auto
+            padding-top: 10%
+            box-sizing: border-box
+            
+            
+            h2
+                color: $red
+                text-align: left
+            p
+                text-align: left
+                position: relative
+                top: 0
+                
+    .third
+        ul
+            padding-top: 30px
+            height: 100%
+            width: 90%
+            @include center
+            display: grid
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+            
+            li
+                position: relative
+                width: 50%
+                display: block
+            
+                svg
+                    position: absolute
+                    height: 0
+                    width: 0
+                    z-index: 30
+                    left: 0
+                    circle
+                        r: 20px
+                        cy: 20px
+                        cx: 20px
+                        fill: $whiteDots
+                h2
+                    color: $yellow
+                    
+                
+                p
+                    text-align: left
+                    position: relative
+                    left: 10px
+                    top: 0px
+                    
+                    
+            .right
+                margin-left: auto
+                
+    .fourth
+        h2
+            color: $orange
+            display: inline-block
+            text-align: center
+            @include center
+            top: 40%
+            
+    .fifth
+        form
+            width: 90%
+            height: 60%
+            top: 20%
+            @include center
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: 1fr 1fr 1fr 1fr
+            
+            div
+                position: relative
+                box-sizing: border-box
+                width: 80%
+                @include center
+                    
+                input
+                    background-color: $navColor
+                    border: $turquoise 1px solid
+                    padding-left: 5px
+                    height: $bodySize * 1.5
+                    position: relative
+                    top: $bodySize
+                    width: 100%
+                    color: $whiteDots
+                    
+                p
+                    text-align: left
+                    padding-left: 5px
+                    color: $turquoise
+                    margin-bottom: 4%
+                
+            .checkboxes
+                margin-left: 0
+                display: flex
+                justify-content: space-between
+                height: 100%
+                float: left
+                width: 60%
+                input
+                    display: inline-block
+                    background-color: $navColor
+                    cursor: pointer
+
+                span
+                    padding-left: 5px
+                    color: $turquoise
+                    font-size: $bodySize
+                    font-family: $hLight
+                    position: relative
+                    top: $bodySize + 5px
+                    height: $bodySize
+                    box-sizing: border-box
+                    
+        .submit
+            grid-column: 1 /span 2
+            
+            button
+                background-color: $turquoise
+                color: $navColor
+                font-family: $hLight
+                border: none
+                font-size: $bodySize * 1.5
+                @include center
+                width: 50%
+                top: $bodySize
+                    
+        
+            
+
+                
+#left
+    .first
+        h1
+            text-align: right
+    img
+        margin-left: auto
+        margin-right: $landingMargin / 2
+        
+    .third
+        overflow: hidden
+        .background
+            height: auto
+            width: 100%
+        
+    

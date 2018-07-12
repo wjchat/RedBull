@@ -23,7 +23,7 @@ nav
             margin: auto
             cursor: pointer
             left: ($navWidth / 2) - (15)
-            transition: all $time ease-in-out 0s
+            transition: all ($time * .7) ease-in-out 0s
             left: ($navWidth / 2)
             
         
@@ -45,7 +45,7 @@ svg
     width: $navDotRadius * 2
     position: absolute
     left: ($navWidth / 2) - ($navDotRadius)
-    transition: all $time ease-in-out 0s
+    transition: all ($time / 2) ease-in-out 0s
     
     circle
         cy: $navDotRadius

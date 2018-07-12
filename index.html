@@ -9,29 +9,32 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/specific.css">
+
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/now-alt" type="text/css" />
 </head>
 
 <body>
     <nav>
         <div class='container'>
-            <div><img position=1 class='currentNav' src="vectors/Mandala.svg" alt="Plus"><svg position = 1>
+            <div><img position=1 class='currentNav' src="vectors/Mandala.svg" alt="Plus"><svg class='shrink' position=1>
                       <circle/>
                         </svg>
             </div>
             <div><img position=2 class='dormantNav' src="vectors/Mandala.svg" alt="Plus">
-                <svg position = 2>
+                <svg position=2>
                       <circle/>
                         </svg></div>
             <div><img position=3 class='dormantNav' src="vectors/Mandala.svg" alt="Plus">
-                <svg position = 3>
+                <svg position=3>
                       <circle/>
                         </svg></div>
             <div><img position=4 class='dormantNav' src="vectors/Mandala.svg" alt="Plus">
-                <svg position = 4>
+                <svg position=4>
                       <circle/>
                         </svg></div>
             <div><img position=5 class='dormantNav' src="vectors/Mandala.svg" alt="Plus">
-                <svg position = 5>
+                <svg position=5>
                       <circle/>
                         </svg></div>
         </div>
@@ -40,39 +43,109 @@
         <div class='container' id='left'>
 
             <div position=5 class='module'>
-                <p>page five left</p>
+                <img class='background' src="img/HutDay.jpg" alt="">
+                <img class='titleImg' src="vectors/RSVP.svg" alt="">
             </div>
-            <div position=4 class='module'>
-                <p>page four left</p>
+
+            <div position=4 class='module fourth'>
+                <img class='background' src="img/Palms.jpg" alt="">
+                <img class='titleImg' src="vectors/PERFORMERS.svg" alt="performers">
             </div>
-            <div position=3 class='module'>
-                <p>page three left</p>
+
+            <div position=3 class='module third'>
+                <img class='background' src="img/Leaves.jpeg" alt="">
+                <img class='titleImg' src="vectors/COLLABORATORS.svg" alt=""></div>
+
+            <div position=2 class='module second'>
+                <img class='background' src="img/HutNight.jpg" alt="">
+                <img class='titleImg' src="vectors/WHATWHEREWHEN.svg" alt="What Where When">
             </div>
-            <div position=2 class='module'>
-                <p>page two left</p>
+            <div position=1 class='view module first'>
+                <img src="vectors/Mandala.svg" alt="">
+                <h1>VILLA</h1>
             </div>
-            <div position=1 class='view module'>
-                <p>page one left</p>
-            </div>
-            
+
 
         </div>
         <div class='container' id='right'>
 
-            <div position=1 class='view module edge-top'>
-                <p>page one right</p>
+            <div position=1 class='view module edge-top first'>
+                <img src="vectors/Mandala.svg" alt="">
+                <h1>RIAD</h1>
             </div>
-            <div position=2 class='module'>
-                <p>page two right</p>
+
+            <div position=2 class='module second'>
+                <div>
+                    <h2>Villa Riad</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam vitae rem, odio eos.</p>
+                </div>
+                <div>
+                    <h2>Undisclosed Location</h2>
+                    <p>consequuntur reprehenderit blanditiis mollitia adipisci esse laborum.</p>
+                </div>
+                <div>
+                    <h2>SUN AUG 05 2018</h2>
+                    <p>Lorem purp skirt.</p>
+                </div>
             </div>
-            <div position=3 class='module'>
-                <p>page three right</p>
+
+            <div position=3 class='module third'>
+                <ul>
+                    <li><svg><circle/></svg>
+                        <h2>Brian Fisher</h2>
+                        <p>text</p>
+                    </li>
+                    <li class='right'><svg><circle/></svg>
+                        <h2>Grey Ghost Detroit</h2>
+                        <p>text</p>
+                    </li>
+                    <li><svg><circle/></svg>
+                        <h2>The Blind Barber</h2>
+                        <p>text</p>
+                    </li>
+                    <li class='right'><svg><circle/></svg>
+                        <h2>Astro Wifey</h2>
+                        <p>text</p>
+                    </li>
+                    <li><svg><circle/></svg>
+                        <h2>Jason Markk</h2>
+                        <p>text</p>
+                    </li>
+                </ul>
             </div>
-            <div position=4 class='module'>
-                <p>page four right</p>
+
+            <div position=4 class='module fourth'>
+                <h2>PERFORMERS <br> TO BE <br> ANNOUNCED</h2>
             </div>
-            <div position=5 class='module edge-bottom'>
-                <p>page five right</p>
+
+            <div position=5 class='module edge-bottom fifth'>
+                <form action="/">
+                    <div>
+                        <p>First Name</p><input type="text"></div>
+                    <div>
+                        <p>Last Name</p><input type="text"></div>
+                    <div>
+                        <p>Email</p><input type="text"></div>
+                    <div>
+                        <p>Cell Phone</p><input type="text"></div>
+                    <div>
+                        <p>Do you have a wristband?</p>
+                        <div class='checkboxes'>
+
+
+                                <span>Yes</span>
+                                <input type="checkbox">
+                                <span>No</span>
+                                <input type="checkbox">
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <p>Invitation number</p><input type="text"></div>
+                    <div class = 'submit'><button type= button name='button'>SUBMIT</button></div>
+
+                </form>
             </div>
         </div>
 

@@ -60,6 +60,24 @@ function tagRight(direction) {
     }
 }
 
+//lets us use svg circles to trigger animation
+function triggerCircle(circle) {
+    for (let each of pointers) {
+        if (circle.getAttribute('position') === each.getAttribute('position')) {
+            navAnimation(each);
+        }
+    }
+    clearCircle(circle);
+}
+
+function clearCircle(circle) {
+
+    for (let each of circles) {
+        each.classList.remove('shrink');
+    }
+    circle.classList.add('shrink');
+}
+
 //lets navigation jump view to section, takes nav element as param
 function toSection(section) {
 
@@ -162,6 +180,11 @@ function pageDown() {
             navAnimation(each);
         }
     }
+    for (let each of circles) {
+        if (each.getAttribute('position') === currentPos) {
+            clearCircle(each);
+        }
+    }
 }
 
 function pageUp() {
@@ -175,10 +198,15 @@ function pageUp() {
             navAnimation(each);
         }
     }
+    for (let each of circles) {
+        if (each.getAttribute('position') === currentPos) {
+            clearCircle(each);
+        }
+    }
 }
 
 let canGo = true;
-let delay = 1200
+let delay = 1500
 
 function MouseWheelHandler() {
     return function (e) {
@@ -214,22 +242,30 @@ if (document.addEventListener) {
     sq.attachEvent("onmousewheel", MouseWheelHandler());
 }
 
-
-
 tagItems();
 arrow.onclick = function () {
     pageDown();
 }
 
-for (let each of pointers) {
-
+//for (let each of pointers) {
+//
+//    each.onclick = function () {
+//        let currentPos = rightView.querySelector('.view').getAttribute('position');
+//        if (!(each.getAttribute('position') === currentPos)) {
+//            toSection(each);
+//        }
+//        navAnimation(each);
+//    }
+//}
+for (let each of circles) {
     each.onclick = function () {
-        let currentPos = rightView.querySelector('.view').getAttribute('position');
-        if (!(each.getAttribute('position') === currentPos)) {
-            toSection(each);
-        }
-        navAnimation(each);
+        triggerCircle(each);
+        toSection(each);
     }
 }
 
-for()
+function test(){
+    let test = rightView.querySelector('.view');
+    console.log(test);
+    slideUp(test, false);
+}

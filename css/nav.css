@@ -18,7 +18,7 @@ nav {
       margin: auto;
       cursor: pointer;
       left: 15px;
-      transition: all 0.3s ease-in-out 0s;
+      transition: all 0.21s ease-in-out 0s;
       left: 30px; }
     nav div .currentNav {
       top: 0;
@@ -37,7 +37,7 @@ svg {
   width: 8px;
   position: absolute;
   left: 26px;
-  transition: all 0.3s ease-in-out 0s; }
+  transition: all 0.15s ease-in-out 0s; }
   svg circle {
     cy: 4px;
     cx: 4px;
