@@ -39,9 +39,15 @@ function tagLeft(direction) {
     if (direction === 'up') {
         slideUp(now, false);
         slideUp(next, true);
+        let titleImg = next.querySelector('.lax');
+        parallaxImg(titleImg, "up");
+
     } else if (direction === 'down') {
         slideDown(now, false);
         slideDown(previous, true);
+
+        let titleImg = previous.querySelector('.lax');
+        parallaxImg(titleImg, "down");
     }
 }
 
@@ -54,9 +60,29 @@ function tagRight(direction) {
     if (direction === 'up') {
         slideUp(now, false);
         slideUp(next, true);
+
+        let delay = 0;
+        let laxers = next.getElementsByClassName('lax');
+
+        for (let each of laxers) {
+            setTimeout(function () {
+                parallaxImg(each, "up");
+            }, delay);
+            delay += 50;
+        }
+
     } else if (direction === 'down') {
         slideDown(now, false);
         slideDown(previous, true);
+        let delay = 0;
+        let laxers = previous.getElementsByClassName('lax');
+
+        for (let each of laxers) {
+            setTimeout(function () {
+                parallaxImg(each, "down");
+            }, delay);
+            delay += 50;
+        }
     }
 }
 
@@ -65,11 +91,19 @@ function triggerCircle(circle) {
     for (let each of pointers) {
         if (circle.getAttribute('position') === each.getAttribute('position')) {
             navAnimation(each);
+            triggerBackground(circle.getAttribute('position'));
         }
     }
     clearCircle(circle);
 }
 
+function triggerBackground(position){
+    let background = document.querySelector('.background').querySelector('img');
+    console.log(background);                                                                   
+    let percentage = 5 * position * -1;
+    background.style.transform ='translateY(' + percentage + '%)';
+
+}
 function clearCircle(circle) {
 
     for (let each of circles) {
@@ -94,9 +128,18 @@ function toSection(section) {
             if (goTo.getAttribute('position') > currentPos) {
                 slideDown(goTo, true);
                 slideDown(current, false);
+
+                let titleImg = goTo.querySelector('.lax');
+                parallaxImg(titleImg, "down");
+
             } else {
                 slideUp(goTo, true);
                 slideUp(current, false);
+
+                let titleImg = goTo.querySelector('.lax');
+                if (!(titleImg === null)) {
+                    parallaxImg(titleImg, "up");
+                }
             }
         } else {
             //positions other divs correctly
@@ -119,9 +162,28 @@ function toSection(section) {
             if (goTo.getAttribute('position') < currentPos) {
                 slideDown(goTo, true);
                 slideDown(current, false);
+                let delay = 0;
+                let laxers = goTo.getElementsByClassName('lax');
+
+                for (let each of laxers) {
+                    setTimeout(function () {
+                        parallaxImg(each, "down");
+                    }, delay);
+                    delay += 50;
+                }
             } else {
                 slideUp(goTo, true);
                 slideUp(current, false);
+                
+                let delay = 0;
+                let laxers = goTo.getElementsByClassName('lax');
+
+                for (let each of laxers) {
+                    setTimeout(function () {
+                        parallaxImg(each, "up");
+                    }, delay);
+                    delay += 50;
+                }
             }
         } else {
             //positions other divs correctly
@@ -169,6 +231,7 @@ function slideDown(move, intoView) {
 
 }
 
+//scrolling down?
 function pageDown() {
     if (!(rightView.querySelector('.view').classList.contains('edge-bottom'))) {
         tagRight('up');
@@ -178,6 +241,7 @@ function pageDown() {
     for (let each of navItems) {
         if (each.getAttribute('position') === currentPos) {
             navAnimation(each);
+            triggerBackground(each.getAttribute('position'));
         }
     }
     for (let each of circles) {
@@ -187,6 +251,7 @@ function pageDown() {
     }
 }
 
+//scrolling up?
 function pageUp() {
     if (!(rightView.querySelector('.view').classList.contains('edge-top'))) {
         tagRight('down');
@@ -196,6 +261,7 @@ function pageUp() {
     for (let each of navItems) {
         if (each.getAttribute('position') === currentPos) {
             navAnimation(each);
+            triggerBackground(each.getAttribute('position'));
         }
     }
     for (let each of circles) {
@@ -205,8 +271,25 @@ function pageUp() {
     }
 }
 
+function parallaxImg(item, direction) {
+    if (!(item === null) && !(item === undefined)) {
+        if (direction === "up") {
+            item.classList.add("movingUp");
+            setTimeout(function () {
+                item.classList.remove("movingUp");
+            }, 20);
+
+        } else {
+            item.classList.add("movingDown");
+            setTimeout(function () {
+                item.classList.remove("movingDown");
+            }, 20);
+        }
+    }
+}
+
 let canGo = true;
-let delay = 1500
+let delay = 1800
 
 function MouseWheelHandler() {
     return function (e) {
@@ -264,8 +347,7 @@ for (let each of circles) {
     }
 }
 
-function test(){
+function test() {
     let test = rightView.querySelector('.view');
-    console.log(test);
     slideUp(test, false);
 }

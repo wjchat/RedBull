@@ -2,6 +2,24 @@
 
 body
     display: flex
+    box-sizing: border-box
+    min-width: 800px
+    min-height: 450px
+    
+    .background
+        height: 100%
+        width: 100%
+        position: absolute
+        display: block
+        z-index: -1
+        overflow: hidden
+        
+        img
+            position: relative
+            transform: translateY(0%)
+            transition: $time all ease-in-out 0s
+            
+ 
 
 p
     font-size: $bodySize
@@ -15,9 +33,6 @@ h2
     width: 100%
     display: flex
     justify-content: space-between
-    background-image: url('../img/Background.png')
-    background-position: center
-    background-size: auto
     color: white
     
     .container
@@ -76,6 +91,16 @@ h2
         left: 0
         right: 0
         margin: auto
+        transition: ($time) all ease-in-out (.1s)
+        
+    .movingDown
+        transform: translateY(-$yMovement)
+        transition: 0s all linear 0s
+        
+    .movingUp 
+        transform: translateY($yMovement)
+        transition: 0s all linear 0s
+
         
     .background
         position: absolute
@@ -87,9 +112,20 @@ h2
         top: 50%
         transform: translateY(-50%) translateX(-50%)
         
+#right
     
-.titleImg
-    text
-        font-family: Calibri
-            
+        .lax
+            transform: translateY(0)
+            transition: ($time * 1.25) all ease-in-out 0s
+        
+        .movingDown
+            transform: translateY(-$yMovement)
+            transition: 0s all linear 0s
+        
+        .movingUp 
+            transform: translateY($yMovement)
+            transition: 0s all linear 0s
+
+    
+
         

@@ -1,5 +1,19 @@
 body {
-  display: flex; }
+  display: flex;
+  box-sizing: border-box;
+  min-width: 800px;
+  min-height: 450px; }
+  body .background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: block;
+    z-index: -1;
+    overflow: hidden; }
+    body .background img {
+      position: relative;
+      transform: translateY(0%);
+      transition: 0.8s all ease-in-out 0s; }
 
 p {
   font-size: 16px;
@@ -15,9 +29,6 @@ h2 {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-image: url("../img/Background.png");
-  background-position: center;
-  background-size: auto;
   color: white; }
   .main .container {
     display: block;
@@ -56,7 +67,7 @@ h2 {
   margin-right: auto; }
 
 .module {
-  transition: 0.3s all ease-in-out 0s; }
+  transition: 0.8s all ease-in-out 0s; }
 
 #left div {
   background-size: cover;
@@ -69,7 +80,14 @@ h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: auto; }
+  margin: auto;
+  transition: 0.8s all ease-in-out 0.1s; }
+#left .movingDown {
+  transform: translateY(-150px);
+  transition: 0s all linear 0s; }
+#left .movingUp {
+  transform: translateY(150px);
+  transition: 0s all linear 0s; }
 #left .background {
   position: absolute;
   height: 100%;
@@ -80,7 +98,14 @@ h2 {
   top: 50%;
   transform: translateY(-50%) translateX(-50%); }
 
-.titleImg text {
-  font-family: Calibri; }
+#right .lax {
+  transform: translateY(0);
+  transition: 1s all ease-in-out 0s; }
+#right .movingDown {
+  transform: translateY(-150px);
+  transition: 0s all linear 0s; }
+#right .movingUp {
+  transform: translateY(150px);
+  transition: 0s all linear 0s; }
 
 /*# sourceMappingURL=main.css.map */

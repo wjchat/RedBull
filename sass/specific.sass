@@ -47,15 +47,18 @@
                 top: 0
                 
     .third
+        min-height: 570px
         ul
-            padding-top: 30px
-            height: 100%
+            padding-top: 160px
+            box-sizing: border-box
+            height: 100% 
             width: 90%
             @include center
             display: grid
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 
             
             li
+                margin-top: -80px
                 position: relative
                 width: 50%
                 display: block
@@ -73,6 +76,7 @@
                         fill: $whiteDots
                 h2
                     color: $yellow
+                    font-size: $titleSize * .8
                     
                 
                 p
