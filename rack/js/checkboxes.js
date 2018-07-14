@@ -18,6 +18,8 @@ function checkBox(box){
             
             if (each.getAttribute('name') === 'no'){
                 document.querySelector('#invitation').disabled = true;
+                document.querySelector('#invitation').value = "";
+                
                 document.querySelector('#invitation').classList.add('disabled');
                 document.querySelector('#invitation-text').classList.add('disabled');
                 
