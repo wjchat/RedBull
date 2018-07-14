@@ -30,7 +30,7 @@
         div
             height: auto
             position: relative
-            width: 95%
+            width: $sectionWidth
             display: block
             margin-right: auto
             margin-left: auto
@@ -52,7 +52,7 @@
             padding-top: 160px
             box-sizing: border-box
             height: 100% 
-            width: 90%
+            width: $sectionWidth
             @include center
             display: grid
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 
@@ -99,7 +99,7 @@
             
     .fifth
         form
-            width: 90%
+            width: $sectionWidth
             height: 60%
             top: 20%
             @include center
@@ -127,7 +127,11 @@
                     text-align: left
                     padding-left: 5px
                     color: $turquoise
-                    margin-bottom: 4%
+                    margin-bottom: 10px
+                    
+                .disabled
+                    color: $dots
+                    border-color: $dots
                 
             .checkboxes
                 margin-left: 0
@@ -136,8 +140,38 @@
                 height: 100%
                 float: left
                 width: 60%
-                input
+                
+                .fakebox
+                    width: $bodySize * 1.2
+                    height: $bodySize * 1.2
+                    position: relative
+                    top: $bodySize + 5px
                     display: inline-block
+                    background-color: $navColor
+                    border: solid 1px $turquoise
+                    padding-left: 5px
+                    cursor: pointer
+                    
+                    .check
+                        width: $bodySize / 2
+                        height: $bodySize / 2
+                        border-radius: $bodySize / 2
+                        background-color: $whiteDots
+                        display: block
+                        position: absolute
+                        top: 0
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        margin: auto
+                        transition: all .2s linear 0s
+                        
+                    .hide
+                        width: 0px
+                        height: 0px
+                    
+                input
+                    display: none
                     background-color: $navColor
                     cursor: pointer
 
@@ -163,6 +197,7 @@
                 @include center
                 width: 50%
                 top: $bodySize
+                cursor: pointer
                     
         
             

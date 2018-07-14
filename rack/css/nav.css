@@ -42,10 +42,14 @@ svg {
     cy: 4px;
     cx: 4px;
     r: 4px;
-    fill: #3f3e3f; }
+    fill: #3f3e3f;
+    transition: all 0.3s linear 0s; }
+    svg circle:hover {
+      fill: #dbd7d8; }
 
 .shrink {
   height: 0;
-  width: 0; }
+  width: 0;
+  left: 50%; }
 
 /*# sourceMappingURL=nav.css.map */

@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/specific.css">
+    <link rel="stylesheet" href="rack/css/default.css">
+    <link rel="stylesheet" href="rack/css/style.css">
+    <link rel="stylesheet" href="rack/css/main.css">
+    <link rel="stylesheet" href="rack/css/nav.css">
+    <link rel="stylesheet" href="rack/css/specific.css">
 
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/now-alt" type="text/css" />
 </head>
@@ -17,61 +17,61 @@
 <body>
     <nav>
         <div class='container'>
-            <div><img position=1 class='currentNav' src="vectors/Mandala.svg" alt="Plus"><svg class='shrink' position=1>
+            <div><img position=1 class='currentNav' src="rack/vectors/Mandala.svg" alt="Plus"><svg class='shrink' position=1>
                       <circle/>
                         </svg>
             </div>
-            <div><img position=2 class='dormantNav' src="vectors/Mandala.svg" alt="Plus">
+            <div><img position=2 class='dormantNav' src="rack/vectors/Mandala.svg" alt="Plus">
                 <svg position=2>
                       <circle/>
                         </svg></div>
-            <div><img position=3 class='dormantNav' src="vectors/Mandala.svg" alt="Plus">
+            <div><img position=3 class='dormantNav' src="rack/vectors/Mandala.svg" alt="Plus">
                 <svg position=3>
                       <circle/>
                         </svg></div>
-            <div><img position=4 class='dormantNav' src="vectors/Mandala.svg" alt="Plus">
+            <div><img position=4 class='dormantNav' src="rack/vectors/Mandala.svg" alt="Plus">
                 <svg position=4>
                       <circle/>
                         </svg></div>
-            <div><img position=5 class='dormantNav' src="vectors/Mandala.svg" alt="Plus">
+            <div><img position=5 class='dormantNav' src="rack/vectors/Mandala.svg" alt="Plus">
                 <svg position=5>
                       <circle/>
                         </svg></div>
         </div>
     </nav>
-       <div class = 'background'><img src="img/Background.png" alt=""></div>
+       <div class = 'background'><img src="rack/img/Background.png" alt=""></div>
     <div class='main'>
         <div class='container' id='left'>
 
             <div position=5 class='module'>
-                <img class='background' src="img/HutDay.jpg" alt="">
-                <img class='titleImg lax' src="vectors/RSVP.svg" alt="">
+                <img class='background' src="rack/img/HutDay.jpg" alt="">
+                <img class='titleImg lax' src="rack/vectors/RSVP.svg" alt="">
             </div>
 
             <div position=4 class='module fourth'>
-                <img class='background' src="img/Palms.jpg" alt="">
-                <img class='titleImg lax' src="vectors/PERFORMERS.svg" alt="performers">
+                <img class='background' src="rack/img/Palms.jpg" alt="">
+                <img class='titleImg lax' src="rack/vectors/PERFORMERS.svg" alt="performers">
             </div>
 
             <div position=3 class='module third'>
 
-                <img class='titleImg lax' src="vectors/COLLABORATORS.svg" alt=""></div>
+                <img class='titleImg lax' src="rack/vectors/COLLABORATORS.svg" alt=""></div>
 
             <div position=2 class='module second'>
-                <img class='background' src="img/HutNight.jpg" alt="">
-                <img class='titleImg lax' src="vectors/WHATWHEREWHEN.svg" alt="What Where When">
+                <img class='background' src="rack/img/HutNight.jpg" alt="">
+                <img class='titleImg lax' src="rack/vectors/WHATWHEREWHEN.svg" alt="What Where When">
             </div>
             <div position=1 class='view module first'>
-                <img src="vectors/Mandala.svg" alt="">
+                <img src="rack/vectors/Mandala.svg" alt="">
                 <h1>VILLA</h1>
             </div>
 
 
-        </div>
+        </div> 
         <div class='container' id='right'>
 
             <div position=1 class='view module edge-top first'>
-                <img src="vectors/Mandala.svg" alt="">
+                <img src="rack/vectors/Mandala.svg" alt="">
                 <h1>RIAD</h1>
             </div>
 
@@ -135,15 +135,17 @@
 
 
                                 <span>Yes</span>
-                                <input type="checkbox">
+                                <div name = 'yes' class = 'fakebox'><div class  = 'check hide'></div></div>
+                                <input name = 'yes' type="checkbox">
                                 <span>No</span>
-                                <input type="checkbox">
+                                <div name = 'no' class = 'fakebox'><div class="check hide"></div></div>
+                                <input name = 'no' type="checkbox">
 
                         </div>
 
                     </div>
                     <div class = 'lax'>
-                        <p>Invitation number</p><input type="text"></div>
+                        <p id = 'invitation-text'>Invitation number</p><input type="text" id = 'invitation'></div>
                     <div class = 'submit lax'><button type= button name='button'>SUBMIT</button></div>
 
                 </form>
@@ -153,8 +155,9 @@
         <div class='arrow'>
             <p id='arrow-ting'>Scroll Down</p>
         </div>
-        <script src="js/nav.js"></script>
-        <script src="js/script.js"></script>
+        <script src="rack/js/nav.js"></script>
+        <script src="rack/js/script.js"></script>
+        <script src="rack/js/checkboxes.js"></script>
 </body>
 
 </html>

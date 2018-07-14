@@ -46,16 +46,24 @@ svg
     position: absolute
     left: ($navWidth / 2) - ($navDotRadius)
     transition: all ($time * .5) ease-in-out .3s
+
     
     circle
         cy: $navDotRadius
         cx: $navDotRadius
         r: $navDotRadius
         fill: $dots
+        transition: all .3s linear 0s
         
+        &:hover
+            fill: $whiteDots
+
+    
 .shrink
     height: 0
     width: 0
+
+    left: 50%
         
         
         
