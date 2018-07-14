@@ -1,22 +1,62 @@
 @import 'styles'
 
+.opener
+    transition: 1.6s all ease-in-out 0s
+
 body
     display: flex
     box-sizing: border-box
     min-width: 800px
     min-height: 450px
+    overflow: hidden
+    
+    .curtain
+        height: 100%
+        width: 50%
+        left: 0
+        position: absolute
+        background-color: $maroon
+        z-index: 100
+        transition: all 1.6s ease-in-out 0s
+        
+        &:nth-of-type(1)
+            div
+                display: block
+                right: $landingMargin + 30
+            
+           
+        
+        &:nth-of-type(2)
+            left: 50%
+            
+            div
+                display: block
+                left: $landingMargin
+                text-align: left
+        
+        div
+            font-size: 600px
+            font-family: $hThin
+            position: relative
+            width: 100%
+            top: 15%
+            text-align: right
+            color: $letterOrange
+                
+
     
     .background
         height: 100%
         width: 100%
         position: absolute
         display: block
-        z-index: -1
+        z-index: -1 
         overflow: hidden
         
         img
             position: relative
             transform: translateY(0%)
+            top: -5%
             transition: $time all ease-in-out 0s
             
  
@@ -79,38 +119,48 @@ h2
     transition:  $time all ease-in-out 0s
     
 #left
-    div
-        background-size: cover
-        background-position: center
-    .titleImg
-        width: 60%
-        height: auto
-        position: absolute
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-        margin: auto
-        transition: ($time) all ease-in-out (.1s)
+    .containerFloat
+        overflow: hidden
         
-    .movingDown
-        transform: translateY(-$yMovement)
-        transition: 0s all linear 0s
+        &:nth-of-type(1)
+            background-color: $turquoise         
         
-    .movingUp 
-        transform: translateY($yMovement)
-        transition: 0s all linear 0s
+        &:nth-of-type(2)
+            background-color: $orange
+        
+        &:nth-of-type(3)
+            background-color: $yellow
+        
+        &:nth-of-type(4)
+            background-color: $red 
+        
+        img
+            width: 60px
+            height: 60px
+            position: absolute
+            display: block
+            
+        
+        .titleImg
+            width: 50%
+            height: auto
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            margin: auto
+            transition: ($time) all ease-in-out (.1s)
+        
+        .movingDown
+            transform: translateY(-$yMovement)
+            transition: 0s all linear 0s
 
-        
-    .background
-        position: absolute
-        height: 100%
-        width: auto
-        display: block
-        position: absolute
-        left: 50%
-        top: 50%
-        transform: translateY(-50%) translateX(-50%)
+        .movingUp 
+            transform: translateY($yMovement)
+            transition: 0s all linear 0s
+            
+
         
 #right
     

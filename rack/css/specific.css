@@ -1,23 +1,25 @@
-.first {
-  padding-top: 30%; }
-  .first img {
-    height: 20px;
-    width: auto;
-    display: block;
-    position: relative; }
-  .first h1 {
-    color: #e29e33;
-    font-family: "HelveticaUltraLight";
-    font-size: 120px;
-    margin-right: 20px;
-    margin-left: 20px;
-    letter-spacing: 15px; }
+.first img {
+  height: 5%;
+  width: auto;
+  display: block;
+  position: relative;
+  top: 20%; }
+.first h1 {
+  top: 20%;
+  position: relative;
+  padding-top: 40px;
+  color: #e29e33;
+  font-family: "HelveticaUltraLight";
+  font-size: 190px;
+  margin-right: 40px;
+  margin-left: 40px;
+  letter-spacing: 15px; }
 
 #right .first h1 {
   text-align: left; }
 #right .first img {
   margin-right: auto;
-  margin-left: 10px; }
+  margin-left: 20px; }
 #right .second {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr; }
@@ -85,6 +87,8 @@
   margin-right: auto;
   margin-left: auto;
   top: 40%; }
+  #right .fourth h2 span {
+    font-family: "HelveticaThin"; }
 #right .fifth form {
   width: 90%;
   height: 60%;
@@ -150,7 +154,7 @@
         right: 0;
         bottom: 0;
         margin: auto;
-        transition: all 0.2s linear 0s; }
+        transition: all 0.1s linear 0s; }
       #right .fifth form .checkboxes .fakebox .hide {
         width: 0px;
         height: 0px; }
@@ -187,7 +191,7 @@
   text-align: right; }
 #left img {
   margin-left: auto;
-  margin-right: 10px; }
+  margin-right: 20px; }
 #left .third {
   overflow: hidden; }
   #left .third .background {

@@ -97,13 +97,13 @@ function triggerCircle(circle) {
     clearCircle(circle);
 }
 
-function triggerBackground(position){
+function triggerBackground(position) {
     let background = document.querySelector('.background').querySelector('img');
-    console.log(background);                                                                   
     let percentage = 5 * position * -1;
-    background.style.transform ='translateY(' + percentage + '%)';
+    background.style.transform = 'translateY(' + percentage + '%)';
 
 }
+
 function clearCircle(circle) {
 
     for (let each of circles) {
@@ -174,7 +174,7 @@ function toSection(section) {
             } else {
                 slideUp(goTo, true);
                 slideUp(current, false);
-                
+
                 let delay = 0;
                 let laxers = goTo.getElementsByClassName('lax');
 
@@ -236,17 +236,17 @@ function pageDown() {
     if (!(rightView.querySelector('.view').classList.contains('edge-bottom'))) {
         tagRight('up');
         tagLeft('down');
-    }
-    let currentPos = rightView.querySelector('.view').getAttribute('position');
-    for (let each of navItems) {
-        if (each.getAttribute('position') === currentPos) {
-            navAnimation(each);
-            triggerBackground(each.getAttribute('position'));
+        let currentPos = rightView.querySelector('.view').getAttribute('position');
+        for (let each of navItems) {
+            if (each.getAttribute('position') === currentPos) {
+                navAnimation(each);
+                triggerBackground(each.getAttribute('position'));
+            }
         }
-    }
-    for (let each of circles) {
-        if (each.getAttribute('position') === currentPos) {
-            clearCircle(each);
+        for (let each of circles) {
+            if (each.getAttribute('position') === currentPos) {
+                clearCircle(each);
+            }
         }
     }
 }
@@ -256,20 +256,39 @@ function pageUp() {
     if (!(rightView.querySelector('.view').classList.contains('edge-top'))) {
         tagRight('down');
         tagLeft('up');
-    }
-    let currentPos = rightView.querySelector('.view').getAttribute('position');
-    for (let each of navItems) {
-        if (each.getAttribute('position') === currentPos) {
-            navAnimation(each);
-            triggerBackground(each.getAttribute('position'));
+        let currentPos = rightView.querySelector('.view').getAttribute('position');
+        for (let each of navItems) {
+            if (each.getAttribute('position') === currentPos) {
+                navAnimation(each);
+                triggerBackground(each.getAttribute('position'));
+            }
         }
-    }
-    for (let each of circles) {
-        if (each.getAttribute('position') === currentPos) {
-            clearCircle(each);
+        for (let each of circles) {
+            if (each.getAttribute('position') === currentPos) {
+                clearCircle(each);
+            }
         }
     }
 }
+
+function sideTextOn(circle){
+    let text = circle.nextElementSibling;    
+    if(!(text === null)){
+        
+    text.style.left = '59px';
+    }
+
+}
+function sideTextOff(circle){
+    let text = circle.nextElementSibling;    
+    
+    if(!(text === null)){
+        
+    let width = text.offsetWidth;
+    text.style.left = width * -1 + "px";
+    }
+}
+
 
 function parallaxImg(item, direction) {
     if (!(item === null) && !(item === undefined)) {
@@ -330,16 +349,7 @@ arrow.onclick = function () {
     pageDown();
 }
 
-//for (let each of pointers) {
-//
-//    each.onclick = function () {
-//        let currentPos = rightView.querySelector('.view').getAttribute('position');
-//        if (!(each.getAttribute('position') === currentPos)) {
-//            toSection(each);
-//        }
-//        navAnimation(each);
-//    }
-//}
+
 for (let each of circles) {
     each.onclick = function () {
         triggerCircle(each);
@@ -350,4 +360,13 @@ for (let each of circles) {
 function test() {
     let test = rightView.querySelector('.view');
     slideUp(test, false);
+}
+
+for(let each of circles){
+    each.onmouseenter = function(){
+        sideTextOn(each);
+    }
+    each.onmouseleave = function(){
+        sideTextOff(each);
+    }
 }

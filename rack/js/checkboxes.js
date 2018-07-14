@@ -2,9 +2,6 @@ let inputs = document.querySelector('.checkboxes').getElementsByTagName('input')
 
 let fakeBoxes = document.querySelector('.checkboxes').getElementsByClassName('fakebox');
 
-
-console.log(inputs);
-console.log(fakeBoxes);
 function checkBox(box){
     for(let each of fakeBoxes){
         each.querySelector('.check').classList.add('hide');
