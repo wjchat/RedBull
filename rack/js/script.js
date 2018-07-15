@@ -3,7 +3,7 @@ let leftView = document.getElementById('left');
 let rightView = document.getElementById('right');
 
 let body = document.querySelector('body');
-let arrow = document.getElementById('arrow-ting');
+
 let pointers = document.querySelector('nav').querySelector('.container').getElementsByTagName('img');
 let circles = document.querySelector('nav').querySelectorAll('svg');
 
@@ -345,9 +345,7 @@ if (document.addEventListener) {
 }
 
 tagItems();
-arrow.onclick = function () {
-    pageDown();
-}
+
 
 
 for (let each of circles) {

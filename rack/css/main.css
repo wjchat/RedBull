@@ -84,18 +84,6 @@ h2 {
     .main .container .invisible {
       visibility: hidden; }
 
-.arrow {
-  position: absolute;
-  display: block;
-  z-index: 20;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  width: 30px;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto; }
-
 .module {
   transition: 0.8s all ease-in-out 0s; }
 
@@ -131,6 +119,18 @@ h2 {
     transform: translateY(150px);
     transition: 0s all linear 0s; }
 
+img.arrow {
+  position: absolute;
+  display: block;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  width: 3%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer; }
+
 #right .lax {
   transform: translateY(0);
   transition: 1s all ease-in-out 0s; }
@@ -140,5 +140,18 @@ h2 {
 #right .movingUp {
   transform: translateY(150px);
   transition: 0s all linear 0s; }
+
+img.arrow {
+  position: absolute;
+  display: block;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  width: 5%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: -20%;
+  transition: 0.6s all ease-in-out 0s; }
 
 /*# sourceMappingURL=main.css.map */
